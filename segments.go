@@ -191,7 +191,7 @@ func StartExternalSegment(txn Transaction, request *http.Request) *ExternalSegme
 	if request != nil && request.Header != nil {
 		for key, values := range s.OutboundHeaders() {
 			for _, value := range values {
-				request.Header.Add(key, value)
+				request.Header.Set(key, value)
 			}
 		}
 	}
